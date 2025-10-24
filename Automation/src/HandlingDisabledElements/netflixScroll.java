@@ -1,0 +1,29 @@
+package HandlingDisabledElements;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class netflixScroll {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.navigate().to("https://www.netflix.com/");Thread.sleep(200);
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");//It will scroll for 500 pixels
+		js.executeScript("window.scrollTo(0,300,)");// it will scroll for 300 pixels from initial position
+		Point location = driver.findElement(By.xpath("//h2[text()='Frequently Asked Questions']")).getLocation();//text function
+		int yAxis=location.getY();
+		//js.executeAsyncScript("window.scrollTo(0,"+yAxis+")");//both side concatination
+		js.executeScript("window.scrollTo"+location);//one side concatination
+		
+
+	}
+
+}

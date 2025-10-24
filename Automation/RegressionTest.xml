@@ -1,0 +1,10 @@
+<suite name="Suite">
+<Groups>
+<Run><include name="RegressionTest"/>
+</Run>>
+</Groups>
+
+
+  <test thread-count="5" name="Test">
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

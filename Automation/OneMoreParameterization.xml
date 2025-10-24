@@ -1,0 +1,12 @@
+
+<suite name="Suite">
+
+  <test thread-count="5" name="Test">
+  <parameter name="url" value="https://demoapps.qspiders.com/" />
+  <parameter name="un"  value="admin" />
+  <parameter name="pwd" value="manager" />
+    <classes>
+      <class name="DataDrivenTesting.LearnParameterization"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
